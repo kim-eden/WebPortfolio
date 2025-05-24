@@ -159,8 +159,8 @@ ul.v_con > li.cells .text_con h6{}
 
 #header.sections.section_00 .width_con{ padding: 0; z-index: 1; transition: inherit;}
 #header.sections.section_00 .width_con a.btn_home,
-#header.sections.section_00.scrolled:hover .width_con a.btn_home{ position: absolute; height: 40px; top: 10px; transition: inherit;}
-#header.sections.section_00.scrolled .width_con a.btn_home{ height: 40px; top: 10px;}
+#header.sections.section_00.scrolled:hover .width_con a.btn_home{ position: absolute; height: 32px; top: 14px; transition: inherit;}
+#header.sections.section_00.scrolled .width_con a.btn_home{ height: 32px; top: 14px;}
 #header.sections.section_00 .width_con a.btn_home img{ height: 100%;}
 
 #header.sections.section_00 .width_con > ul{ position: absolute; right: 0;}
