@@ -16,7 +16,9 @@
 #skills.sections.section_03{ overflow: hidden;}
 #skills.sections.section_03 .width_con ul.v_con.two_con li.cells ul.v_con li.cells ul.v_con.two_con li.cells h3 i{ margin-right: var(--mrgn);}
 #skills.sections.section_03 .width_con ul.v_con.two_con li.cells ul.v_con li.cells ul.v_con.two_con li.cells h4{ margin-bottom: var(--mrgn);}
-#skills.sections.section_03 .width_con ul.v_con.two_con li.cells ul.v_con li.cells ul.v_con.two_con li.cells h5{ font-weight: 400;}
+#skills.sections.section_03 .width_con ul.v_con.two_con li.cells ul.v_con li.cells ul.v_con.two_con li.cells h5{ font-weight: 400; line-height: 1.75em;}
+#skills.sections.section_03 .width_con ul.v_con.two_con li.cells ul.v_con li.cells ul.v_con.two_con li.cells .educationdown h4.sparta:before{ top: 32px;}
+#skills.sections.section_03 .width_con ul.v_con.two_con li.cells ul.v_con li.cells ul.v_con.two_con li.cells .educationdown h4.green:before{ top: 58px;}
 
 #portfolio.sections.section_04 .width_con ul.v_con li.cells ul.v_con.three_con.website li.cells.box.ratio_4x3{}
 #portfolio.sections.section_04 .width_con ul.v_con li.cells ul.v_con.three_con.website li.cells.box.ratio_4x3 a img.web_logo{ position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 215px; border-radius: 0; transition: all 350ms ease-out}
