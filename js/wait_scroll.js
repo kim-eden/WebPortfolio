@@ -36,3 +36,19 @@ document.addEventListener('scroll', function(e) {
         ticking = true;
     }
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const target = document.querySelector('.star_con');
+    if (!target) return;
+
+    const observer = new IntersectionObserver(([entry]) => {
+        if (entry.isIntersecting) {
+            target.classList.add('visible');
+            observer.unobserve(target); // 한 번만 작동 (반복 원하면 제거)
+        }
+    }, {
+        threshold: 0.2 // 20% 보이면 트리거
+    });
+
+    observer.observe(target);
+});

@@ -3,7 +3,8 @@
 }
 html,body{ background: #000; overflow: auto;}
 
-.star_con{ }
+.star_con { opacity: 0; transition: opacity 0.5s ease-out;}
+.star_con.visible { opacity: 1;}
 .star_con .star, .star_con .star *{transform-style: preserve-3d;}
 .star_con,
 .star_con .star{ position: absolute; top: 100%; left: 50%; width: var(--star_rate); aspect-ratio: 1/1; transform: translate(-50%, -50%);}
@@ -53,6 +54,7 @@ html,body{ background: #000; overflow: auto;}
     transparent 16%
     ) 0 0/100% 100% no-repeat;
 }
+
 @keyframes ray {
     from{ transform:   rotate(0deg);}
     to{   transform: rotate(360deg);}
