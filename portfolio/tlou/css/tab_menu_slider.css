@@ -1,0 +1,23 @@
+@charset "UTF-8";
+.tab_menu{}
+.tab_menu > ul.tab_btn{ position: relative; width: 100%; color: #fff; text-align: center;}
+.tab_menu > ul.tab_btn > li{ position: relative; display: inline-block; text-align: center; padding: 16px 21px; cursor: pointer; z-index: 2; border-radius: 999px;}
+.tab_menu > ul.tab_btn > li.selected{ color: #000; cursor: default; pointer-events: none;}
+.tab_menu > ul.tab_btn > li.slider{ position: absolute; top: 0; left: 295px; background: #fff; pointer-events: none; z-index: 1; transition: all 200ms ease-in-out;}
+.tab_menu > ul.tab_content{ padding: 36px 0 0 0;}
+.tab_menu > ul.tab_content > li{ display: none;}
+.tab_menu > ul.tab_content > li.selected{ display: block;}
+.tab_menu > ul.tab_cate_content > li{ background: #fff;}
+/*.tab_menu.cate_1 > ul.tab_cate_content > li,*/
+.tab_menu.cate_2 > ul.tab_cate_content > li,
+.tab_menu.cate_3 > ul.tab_cate_content > li,
+.tab_menu.cate_4 > ul.tab_cate_content > li,
+.tab_menu.cate_5 > ul.tab_cate_content > li,
+.tab_menu.cate_6 > ul.tab_cate_content > li{ display: none;}
+.tab_menu > ul.tab_cate_content > li,
+/*.tab_menu.cate_1 > ul.tab_cate_content > li.cate_1,*/
+.tab_menu.cate_2 > ul.tab_cate_content > li.cate_2,
+.tab_menu.cate_3 > ul.tab_cate_content > li.cate_3,
+.tab_menu.cate_4 > ul.tab_cate_content > li.cate_4,
+.tab_menu.cate_5 > ul.tab_cate_content > li.cate_5,
+.tab_menu.cate_6 > ul.tab_cate_content > li.cate_6{ display: block;}

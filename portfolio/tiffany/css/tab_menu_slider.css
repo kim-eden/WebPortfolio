@@ -1,0 +1,47 @@
+@charset "UTF-8";
+/*버튼 기준 잡기*/
+.tab_menu{}
+/*.tab_scroll{overflow-x: auto; overflow-y: hidden;}*/
+.tab_menu > .tab_btn_con{ position: relative; width: calc(100% + var(--mrgn-x4)); overflow-x: auto; margin: 0 calc(var(--mrgn-x2) * -1); padding: 0 var(--mrgn-x4); box-sizing: border-box; height: max-content;}
+.tab_menu > .tab_btn_con > ul.tab_btn{ position: relative; width: 100%; min-width: max-content; color: var(--color-k-075); text-align: center; margin-bottom: var(--mrgn-x4); font-size: 1.25em;}
+/*버튼 아래 그라데이션바*/
+.tab_menu > .tab_btn_con > ul.tab_btn:before{position: absolute; content: ''; bottom: calc(var(--mrgn) * -1); left: 50%; transform: translateX(-50%); width: calc(100% + var(--mrgn-x8)); height: var(--mrgn); background: linear-gradient(var(--color-point) 2px, transparent); -webkit-mask-image: linear-gradient(90deg, transparent 0, var(--color-w) var(--mrgn-x4), var(--color-w) calc(100% - var(--mrgn-x4)), transparent 100%); mask-image: linear-gradient(90deg, transparent 0, var(--color-w) var(--mrgn-x4), var(--color-w) calc(100% - var(--mrgn-x4)), transparent 100%);
+mask-image: linear-gradient(90deg, transparent 1%, var(--color-main) 10%, var(--color-main) 88%, transparent 99%);}
+
+/*버튼 꾸미기*/
+.tab_menu > .tab_btn_con > ul.tab_btn > li{ position: relative; display: inline-block; text-align: center; padding: var(--mrgn-half) var(--mrgn-x2); cursor: pointer; z-index: 2; border-radius: var(--mrgn-half) var(--mrgn-half) 0 0;}
+/*안에 글씨*/
+.tab_menu > .tab_btn_con > ul.tab_btn > li h4{}
+/*선택 되었을 때*/
+.tab_menu > .tab_btn_con > ul.tab_btn > li.selected{ color: var(--color-k); cursor: default; pointer-events: none;}
+/*호버했을 때*/
+.tab_menu ul.tab_btn li:hover{ color: var(--color-point); transition: color 150ms linear;}
+
+
+/*슬라이더 꾸미기*/
+.tab_menu > .tab_btn_con > ul.tab_btn > li.slider{ position: absolute; top: 0; left: 295px; background: var(--color-point); border-radius: var(--mrgn-half) var(--mrgn-half) 0 0; pointer-events: none; z-index: 1; transition: all 200ms ease-in-out;}
+/*슬라이더 아래 돌아나가는 거*/
+.tab_menu > .tab_btn_con > ul.tab_btn > li.slider:before,
+.tab_menu > .tab_btn_con > ul.tab_btn > li.slider:after{ position: absolute; content: ''; height: var(--mrgn-half); width: var(--mrgn-half);  background: var(--color-point); bottom: 0; opacity: 1;}
+/*왼쪽*/
+.tab_menu > .tab_btn_con > ul.tab_btn > li.slider:before{left: calc(var(--mrgn-half) * -1); background: radial-gradient(circle at 0% 0%, transparent var(--mrgn-half), var(--color-point) var(--mrgn-half));}
+/*오른쪽*/
+.tab_menu > .tab_btn_con > ul.tab_btn > li.slider:after{right: calc(var(--mrgn-half) * -1); background: radial-gradient(circle at 100% 0%, transparent var(--mrgn-half), var(--color-point) var(--mrgn-half));}
+
+
+
+.tab_menu > ul.tab_content{}
+.tab_menu > ul.tab_content > li{ display: none;}
+.tab_menu > ul.tab_content > li.selected{ display: block;}
+.tab_menu > ul.tab_cate_content > li{}
+/*.tab_menu.cate_1 > ul.tab_cate_content > li,*/
+.tab_menu.cate_2 > ul.tab_cate_content > li,
+.tab_menu.cate_3 > ul.tab_cate_content > li,
+.tab_menu.cate_4 > ul.tab_cate_content > li,
+.tab_menu.cate_5 > ul.tab_cate_content > li{display: none;}
+.tab_menu > ul.tab_cate_content > li,
+/*.tab_menu.cate_1 > ul.tab_cate_content > li.cate_1,*/
+.tab_menu.cate_2 > ul.tab_cate_content > li.cate_2,
+.tab_menu.cate_3 > ul.tab_cate_content > li.cate_3,
+.tab_menu.cate_4 > ul.tab_cate_content > li.cate_4,
+.tab_menu.cate_5 > ul.tab_cate_content > li.cate_5{display: inline-block;}

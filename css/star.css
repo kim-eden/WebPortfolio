@@ -1,0 +1,159 @@
+:root{
+    --star_rate : 400px; /*800px*/
+}
+html,body{ background: #000; overflow: auto;}
+
+.star_con{ }
+.star_con .star, .star_con .star *{transform-style: preserve-3d;}
+.star_con,
+.star_con .star{ position: absolute; top: 100%; left: 50%; width: var(--star_rate); aspect-ratio: 1/1; transform: translate(-50%, -50%);}
+.star_con .star.star_glow,
+.star_con .star.star_glow:after,
+.star_con .star.star_glow div,
+.star_con .star.star_bg,
+.star_con .star.star_texture,
+.star_con .star.star_corona{ border-radius: 50%; }
+.star_con .star.star_glow{ width: calc(var(--star_rate) * 1.65);}
+.star_con .star.star_glow:after,
+.star_con .star.star_glow div{ position: absolute; top: 0; left: 0; width: 100%; aspect-ratio: 1/1;}
+.star_con .star.star_glow:after{ content: ''; top: -2px; left: -2px; width: calc(100% + 4px); box-shadow: inset 0 0 calc(var(--star_rate) / 15) calc(var(--star_rate) / 3.5) #000;}
+.star_con .star.star_glow div:nth-child(1){
+    animation: 200s linear ray infinite;
+    background: repeating-conic-gradient(from 0deg at 50% 50%,
+    transparent 0%,
+    rgba(255, 255, 255, 1) 2%,
+    transparent 4%,
+    transparent 5%
+    ) 0 0/100% 100% no-repeat;
+}
+.star_con .star.star_glow div:nth-child(2){
+    animation: 220s linear ray infinite reverse;
+    background: repeating-conic-gradient(from 0deg at 50% 50%,
+    transparent 1.5%,
+    rgba(255, 255, 255, 1) 2%,
+    transparent 2.5%,
+    transparent 7%
+    ) 0 0/100% 100% no-repeat;
+}
+.star_con .star.star_glow div:nth-child(3){
+    animation: 220s linear ray infinite;
+    background: repeating-conic-gradient(from 0deg at 50% 50%,
+    transparent 0%,
+    rgba(255, 255, 255, 1) 1%,
+    transparent 2%,
+    transparent 10%
+    ) 0 0/100% 100% no-repeat;
+}
+.star_con .star.star_glow div:nth-child(4){
+    animation: 200s linear ray infinite reverse;
+    background: repeating-conic-gradient(from 0deg at 50% 50%,
+    transparent .65%,
+    rgba(255, 255, 255, 1) 1%,
+    transparent 1.35%,
+    transparent 16%
+    ) 0 0/100% 100% no-repeat;
+}
+@keyframes ray {
+    from{ transform:   rotate(0deg);}
+    to{   transform: rotate(360deg);}
+}
+.star_con .star.star_bg{ background: radial-gradient(circle, #380066 50%, #700099 80%, #a800cc 85%, #fff 100%);
+    box-shadow: 
+    0 0 calc(var(--star_rate) / 50) calc(var(--star_rate) / 65) #a573d4,
+    0 0 calc(var(--star_rate) / 10) calc(var(--star_rate) / 100) rgba(255, 0, 255, .75),
+    0 0 calc(var(--star_rate) / 2) calc(var(--star_rate) / 5) #1d0070;}
+.star_con .star.star_sphere{ transform: translate(-50%, -50%) rotateX(0deg) rotateZ(15deg) scale(.96); perspective: calc(var(--star_rate) * 2.5);}
+.star_con .star.star_texture{ background: #a573d4 url(../img/texture_full.webp) 0% 50% / auto 100%; transform: translate(-50%, -50%) rotate(15deg); animation: 100s linear texture infinite; mix-blend-mode: plus-lighter; }
+@keyframes texture {
+    from{ background: #a573d4  url(../img/texture_full.webp) 200% 50% / auto 100%;}
+    to{   background: #a573d4  url(../img/texture_full.webp) 0% 50% / auto 100%;}
+}
+.star_con .star.star_corona{ }
+.star_con .star.star_corona:before,
+.star_con .star.star_corona:after{position: absolute; content: ''; top: 50%; left: 50%; aspect-ratio: 1/1; border-radius: 50%; transform: translate(-50%, -50%);}
+.star_con .star.star_corona:before{ width: 100%; background: rgba(255, 255, 255, .8);
+    box-shadow:
+    0 0 calc(var(--star_rate) / 80) calc(var(--star_rate) / 120) rgba(255, 255, 255, 1),
+    0 0 calc(var(--star_rate) / 20) calc(var(--star_rate) / 100) rgba(255, 255, 255, .75),
+    0 0 calc(var(--star_rate) / 10) calc(var(--star_rate) / 80) rgba(255, 255, 255, .5),
+
+    inset 0 0 calc(var(--star_rate) / 10) calc(var(--star_rate) / 40) #fff,
+    inset 0 0 calc(var(--star_rate) / 80) calc(var(--star_rate) / 120) #fff,
+
+    inset calc(var(--star_rate) / -4) calc(var(--star_rate) / 4) calc(var(--star_rate) / 4) 0 rgba(255, 255, 255, .5),
+    inset calc(var(--star_rate) / -8) calc(var(--star_rate) / 8) calc(var(--star_rate) / 8) 0 rgba(255, 255, 255, .5)/*,
+    inset calc(var(--star_rate) / 8) calc(var(--star_rate) / -8) calc(var(--star_rate) / 8) 0 rgba(29, 0, 112, .25),
+    inset calc(var(--star_rate) / 16) calc(var(--star_rate) / -16) calc(var(--star_rate) / 16) 0 rgba(29, 0, 112, .25)*/;
+}
+.star_con .star.star_corona:after{ width: calc(100% - 2px); border: 2px solid #fff;  filter: blur(1px);}
+.star_con .star .star_surface,
+.star_con .star .star_surface .rotate_y_con{position: absolute; top: 0; left: 0; width: 100%; height: 100%;}
+.star_con .star .star_surface { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); animation: rotation 200s linear infinite;}
+@keyframes rotation{
+      0%{ transform: rotateX(0deg)   rotateY(0deg) rotateZ(0deg);}
+    100%{ transform: rotateX(0deg) rotateY(360deg) rotateZ(0deg);}
+}
+.star_con .star .star_surface .rotate_y_con{}
+
+.star_con .star .star_surface .rotate_y_con .rotate_x_con {position: absolute; top: 50%; left: 50%; width: 18%; height: 100%; perspective: calc(var(--star_rate) * 2.5); }
+.star_con .star .star_surface .rotate_y_con .rotate_x_con .c_box{position: absolute; width: 100%; aspect-ratio: 1/1; backface-visibility: hidden; perspective: calc(var(--star_rate)* 0.1);}
+.star_con .star .star_surface .rotate_y_con .rotate_x_con .c_box.c_front{top: 0; transform: translateY(-50%) rotateX(80deg);}
+.star_con .star .star_surface .rotate_y_con .rotate_x_con .c_box.c_back{ bottom: 0; transform: translateY( 50%) rotateX(-80deg);}
+.star_con .star .star_surface .rotate_y_con .rotate_x_con .c_box .flare{ position: absolute; aspect-ratio: 1/1; top: 0; left: 0; border-radius: 50%; background: radial-gradient(circle, transparent 60%, rgba(255, 255, 255, .85) 62%, rgba(255, 255, 255, 1) 65%, transparent 70%); filter: drop-shadow(0 0 calc(var(--star_rate) / 100) #a573d4); opacity: .1;}
+
+.star_con .star .star_surface .rotate_y_con .rotate_x_con .c_box .flare_00{ width: 60%; transform: rotateY(90deg) rotateX(90deg) rotateZ(10deg) translateX(0%) scaleX(.5) scaleY(1.5); opacity: .035; }
+.star_con .star .star_surface .rotate_y_con .rotate_x_con .c_box .flare_01{ width: 200%; transform: rotateY(90deg) rotateZ(80deg) translateX(40%) scaleX(.5) scaleY(.25) skewX(-45deg); opacity: .035; }
+.star_con .star .star_surface .rotate_y_con .rotate_x_con .c_box .flare_02{ width: 180%; transform: rotateY(90deg) rotateZ(90deg) translateX(-22%) scaleX(.35) scaleY(.25); opacity: .035; }
+.star_con .star .star_surface .rotate_y_con .rotate_x_con .c_box .flare_03{ width: 160%; transform: rotateY(110deg) rotateZ(110deg) translateX(0%) scaleX(.15) scaleY(.15); }
+.star_con .star .star_surface .rotate_y_con .rotate_x_con .c_box .flare_04{ width: 140%; transform: rotateY(90deg) rotateX(90deg) translateX(10%) scaleX(.35) scaleY(.5); }
+.star_con .star .star_surface .rotate_y_con .rotate_x_con .c_box .flare_05{ width: 120%; transform: rotateY(120deg) rotateX(120deg) translateX(0%) scaleX(.35) scaleY(.25); }
+.star_con .star .star_surface .rotate_y_con .rotate_x_con .c_box .flare_06{ width: 100%; transform: rotateY(60deg) rotateX(90deg) translateX(0%) scaleX(.35) scaleY(.35); }
+.star_con .star .star_surface .rotate_y_con .rotate_x_con .c_box .flare_07{ width: 80%; transform: rotateY(130deg) rotateX(130deg) translateX(0%) scaleX(.35) scaleY(.35); }
+
+
+
+
+.star_con.flare_animate .star .star_surface .rotate_y_con .rotate_x_con .c_box .flare_00{ animation: explosion_00 10s ease-out infinite;}
+@keyframes explosion_00{
+      0%{ width:  0%; opacity: 1;}
+    100%{ width: 60%; opacity: 0;}
+}
+.star_con.flare_animate .star .star_surface .rotate_y_con .rotate_x_con .c_box .flare_01{ opacity: .035; animation: explosion_01 13s ease-out infinite;}
+@keyframes explosion_01{
+      0%{ width:   0%; opacity: 1;}
+    100%{ width: 200%; opacity: 0;}
+}
+.star_con.flare_animate .star .star_surface .rotate_y_con .rotate_x_con .c_box .flare_02{ animation: explosion_02 15s ease-out infinite;}
+@keyframes explosion_02{
+      0%{ width:   0%; opacity: 1;}
+    100%{ width: 180%; opacity: 0;}
+}
+.star_con.flare_animate .star .star_surface .rotate_y_con .rotate_x_con .c_box .flare_03{ animation: explosion_03 11s ease-out infinite;}
+@keyframes explosion_03{
+      0%{ width:   0%; opacity: 1;}
+    100%{ width: 160%; opacity: 0;}
+}
+.star_con.flare_animate .star .star_surface .rotate_y_con .rotate_x_con .c_box .flare_04{ animation: explosion_04 12s ease-out infinite;}
+@keyframes explosion_04{
+      0%{ width:   0%; opacity: 1;}
+    100%{ width: 140%; opacity: 0;}
+}
+.star_con.flare_animate .star .star_surface .rotate_y_con .rotate_x_con .c_box .flare_05{ animation: explosion_05 14s ease-out infinite;}
+@keyframes explosion_05{
+      0%{ width:   0%; opacity: 1;}
+    100%{ width: 120%; opacity: 0;}
+}
+.star_con.flare_animate .star .star_surface .rotate_y_con .rotate_x_con .c_box .flare_06{ animation: explosion_06 16s ease-out infinite;}
+@keyframes explosion_06{
+      0%{ width:   0%; opacity: 1;}
+    100%{ width: 100%; opacity: 0;}
+}
+.star_con.flare_animate .star .star_surface .rotate_y_con .rotate_x_con .c_box .flare_07{ animation: explosion_07 9s ease-out infinite;}
+@keyframes explosion_07{
+      0%{ width:   0%; opacity: 1;}
+    100%{ width:  80%; opacity: 0;}
+}
+
+
+
+.star_con .star .star_surface .rotate_con:nth-child(2) { transform: translate(-50%, -50%) rotateX(10deg);}
