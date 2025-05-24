@@ -184,7 +184,8 @@ ul.v_con > li.cells .text_con h6{}
 #header.sections.section_00 .width_con ul.nav_lnb > li.nav_segment{ position: absolute; left: 20px; top: -13px; width: 6px; height: 6px; background: #fff; border-radius: 999px; transition: all 0.3s ease-in-out; box-shadow: 0 0 6px #fff, 0 0 5px rgba(229, 156, 255, 0.7), 0 0 10px rgba(186, 156, 255, 0.5), 0 0 15px rgba(186, 156, 255, 1), 0 0 20px rgba(155, 178, 255, 0.7), 0 0 25px rgba(155, 178, 255, 0.5); filter: brightness(1);}
 
 #footer.sections.section_06{}
-#footer.sections.section_06 .width_con .v_con li.cells.no_bar .v_con.two_con li.cells .title_con h4:before{ display: none;}
+#footer.sections.section_06 .width_con .v_con li.cells.no_bar .v_con.three_con li.cells .title_con h4:before{ display: none;}
+#footer.sections.section_06 .width_con .v_con li.cells.no_bar .v_con.three_con li.cells .title_con a{ display: inline-block; color: white; text-decoration: none;}
 #footer.sections.section_06 .width_con .v_con li.cells .logo_bottom img{ width: 300px; height: 100%;}
 
 .glow_c{ position: absolute; border-radius: 9999px; 
