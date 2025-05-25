@@ -68,6 +68,7 @@ b { font-weight: bold;}
 .title_con h4{ margin-bottom: var(--mrgn);}
 .title_con h4:before{ position: absolute; top: calc(var(--mrgn) * -1); left: 0; content: ''; width: var(--mrgn-x2); height: 3px; background: var(--color-w); box-shadow: 0 0 5px rgba(229, 156, 255, 0.7), 0 0 10px rgba(186, 156, 255, 0.5), 0 0 15px rgba(186, 156, 255, 1), 0 0 20px rgba(155, 178, 255, 0.7), 0 0 25px rgba(155, 178, 255, 0.5);}
 .title_con.center h4:before{left: 50%; transform: translateX(-50%);}
+.educationdown h5.h5_bar:before{ position: absolute; top: calc(var(--mrgn-half) * -1); left: 0; content: ''; width: var(--mrgn-x2); height: 3px; background: var(--color-w); box-shadow: 0 0 5px rgba(229, 156, 255, 0.7), 0 0 10px rgba(186, 156, 255, 0.5), 0 0 15px rgba(186, 156, 255, 1), 0 0 20px rgba(155, 178, 255, 0.7), 0 0 25px rgba(155, 178, 255, 0.5);}
 .title_con h5{}
 .title_con h6{}
 
